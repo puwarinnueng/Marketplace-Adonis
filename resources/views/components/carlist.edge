@@ -1,0 +1,54 @@
+{{--  @layout('components.layout')  --}}
+@include('components.layout')
+
+{{--  @section('content')  --}}
+
+
+@section('body')
+{{--  @include('partials.search')  --}}
+<div class="car-list-container">
+    <div class="CarListContainer__root">
+        <div class="CarListContainer__blockCarlist">
+            <div class="CarListContainer__carList">
+ 
+            @each(res in results)
+                        
+                <div class="CarCard__root">
+                    <li class="">
+
+                    <div class="image-cars">
+                        <img src="{{res.relationships["car-photos"].data.id = 184112}}" class="" alt="aaa">
+                    <div>
+                    
+                    {{--  <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars/{{res.id}}"
+                     style="background-image: url(&quot;https://d2wezh9hvue3em.cloudfront.net/fit-in/300x200/user-content/car-photo/image/OJjOUddjGIj0lqYsFkUYS827_regular.jpg&quot;);"></a>  --}}
+
+                    <div>
+                      <a href="#">No.{{res.id}}</a>
+                    <div>
+
+                    <div>
+                        <a href="#">{{res.attributes.name}}</a>
+                    </div>
+
+                    <div>
+                        <a href="#">ไมล์{{res.attributes.mileage}}</a>
+                    </div>
+
+                    {{--  <div>
+                        <a href="#">ดูข้อมูล{{res.relationships["car-district"].data.id}}>
+                    </div>  --}}
+                  
+                   </li>
+                </div>
+
+            
+            
+            @endeach
+
+            </div>
+        </div>
+    </div>  
+</div>
+@endsection
+

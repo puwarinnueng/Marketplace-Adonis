@@ -770,7 +770,7 @@
                                                                     class="cmn-form-checkbox-input " type="checkbox"
                                                                     value="blue"><label class="cmn-form-checkbox-label"
                                                                     for="-blue"></label>
-                                                            </div><button class="TextButton  ">น้ำเงิน</button>
+                                                            </div><button class="TextButton">น้ำเงิน</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -784,7 +784,7 @@
                                                                     class="cmn-form-checkbox-input " type="checkbox"
                                                                     value="brown"><label class="cmn-form-checkbox-label"
                                                                     for="-brown"></label>
-                                                            </div><button class="TextButton  ">น้ำตาล/เบจ</button>
+                                                            </div><button class="TextButton">น้ำตาล/เบจ</button>
                                                         </div>
                                                     </div>
                                                     <div class="FilterCarListOption__halfContainer">
@@ -906,25 +906,14 @@
                         </div>                  
                            
                         <div class="car-list-container">
-                            <div class="CarListContainer__root">
-                                {{--  <div class="CarListContainer__filterBoxOnMobile">
-                                    <div class="result"><span>พบรถบ้านมือสอง 338 คัน</span></div>
-                                    <div class="filter-box-container undefined">
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div class="filter-box-container"></div>
-                                        <div></div>
-                                    </div>
-                                </div>  --}}
-
-                                
+                            <div class="CarListContainer__root">                              
                                 <div class="CarListContainer__blockCarlist">
                                     <div class="CarListContainer__filter">
-                                        <div class="CarListContainer__filterResult"><span>พบรถบ้านมือสอง 338 คัน</span>
+                                        <div class="CarListContainer__filterResult">
+                                            <span>พบรถบ้านมือสอง 
+                                                @include('components.count_cars') 
+                                                    {{--  <a href="#">{{count_cars}}</a>  --}}                                              
+                                            คัน</span>
                                             <div class="CarListContainer__filterBoxOnDesktop">
                                                 <div class="filter-box-container undefined">
                                                     <div class="filter-box-container"></div>

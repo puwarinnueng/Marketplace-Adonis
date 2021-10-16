@@ -36,7 +36,9 @@ export default class CarsController {
       return car
     })
 
-    // console.log(cars[0].photos)
+    // const count_cars = results.data.meta
+
+    console.log(results.data.meta.page?.['total-count'])
         
     return view.render('pages/cars' , {
       cars: cars,
@@ -44,9 +46,11 @@ export default class CarsController {
       // results: results.data.data,   
       // results2: results.data.included,   
       carsbox: carsbox.data.data,
+      count_cars: results.data.meta.page?.['total-count'],
     });
   }
 
+  
   public async carstypebox({ view }) {
     const carsbox = await axios.get('https://carmana.com/api/v2/car-makes')
        

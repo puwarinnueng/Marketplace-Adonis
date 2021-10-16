@@ -1,35 +1,11 @@
 {{--  @layout('components.layout')  --}}
-{{--  @include('components.layout')  --}}
-
-{{--  @section('content')  --}}
-
-
 @section('body')
-
- 
-            @each(res in carsbox)
-                        
+            @each(res in carsbox)                       
                 <div class="">
-                    <li class="">
-                    
-                   
-
-                    <div>
-                      <a href="#">{{res.attributes.key}}</a>
-                    <div>
-
-               
-
-                    
-
-                  
+                    <li class="">                    
+                      <a href="#">{{res.attributes.key}}</a>                 
                    </li>
-                </div>
-
-            
-            
+                </div>            
             @endeach
-
-
 @endsection
 

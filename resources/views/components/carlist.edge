@@ -3,52 +3,51 @@
 
 {{--  @section('content')  --}}
 
-
-@section('body')
-{{--  @include('partials.search')  --}}
+@section()
 <div class="car-list-container">
     <div class="CarListContainer__root">
         <div class="CarListContainer__blockCarlist">
             <div class="CarListContainer__carList">
  
-            @each(res in results)
-                        
-                <div class="CarCard__root">
-                    <li class="">
-
-                    <div class="image-cars">
-                        <img src="{{res.relationships["car-photos"].data.id = 184112}}" class="" alt="aaa">
-                    <div>
+            @each(car in cars)                        
+            <div class="CarCard__root">
+                <li class="">
                     
-                    {{--  <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars/{{res.id}}"
-                     style="background-image: url(&quot;https://d2wezh9hvue3em.cloudfront.net/fit-in/300x200/user-content/car-photo/image/OJjOUddjGIj0lqYsFkUYS827_regular.jpg&quot;);"></a>  --}}
-
+                    {{--  {{ console.log(car.photos) }}  --}}
+                    @each(photo in car.photos) 
+                        @if(photo.include && photo.include.attributes['photo-type'] == 'front')
+                            {{--  {{car.id}} (include front photo)  --}}
+                            {{--  {{photo.include.attributes['medium-url']}}  --}}
+                            {{--  <a class="image-cars">
+                                <img scr={{photo.include.attributes['medium-url']}}  class="" alt="aaa">
+                            </a>  --}}
+                            <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
+                            {{--  <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>  --}}
+                        @endif
+                    @endeach
                     <div>
-                      <a href="#">No.{{res.id}}</a>
-                    <div>
-
-                    <div>
-                        <a href="#">{{res.attributes.name}}</a>
+                      <a href="#">No.{{car.id}}</a>
                     </div>
 
                     <div>
-                        <a href="#">ไมล์{{res.attributes.mileage}}</a>
+                        <a href="#">{{car.attributes.name}}</a>
                     </div>
 
-                    {{--  <div>
-                        <a href="#">ดูข้อมูล{{res.relationships["car-district"].data.id}}>
-                    </div>  --}}
+                    <div>
+                        <a href="#">ไมล์{{car.attributes.mileage}}</a>
+                    </div>
+
+             
                   
-                   </li>
-                </div>
+                </li>
+            </div>
 
-            
             
             @endeach
 
             </div>
         </div>
-    </div>  
+    </li>  
 </div>
 @endsection
 

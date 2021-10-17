@@ -3,7 +3,7 @@
 
 {{--  @section('content')  --}}
 
-@section()
+@section('body')
 <div class="car-list-container">
     <div class="CarListContainer__root">
         <div class="CarListContainer__blockCarlist">
@@ -21,23 +21,27 @@
                             {{--  <a class="image-cars">
                                 <img scr={{photo.include.attributes['medium-url']}}  class="" alt="aaa">
                             </a>  --}}
-                            <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
+                            <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars/{{car.id}}" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
                         @endif
                     @endeach
+                    
+
+
                     <div>
-                      <a href="#">No.{{car.id}}</a>
+                      <p href="#">No.&nbsp;{{car.id}}</p>
                     </div>
 
                     <div>
-                        <a href="#">{{car.attributes.name}}</a>
+                        <h6 href="#">{{car.attributes.name}}</h6>
                     </div>
 
                     <div>
-                        <a href="#">ไมล์-{{car.attributes.mileage}}</a>
+                        <h6 href="#">{{car.attributes.mileage}}&nbsp;km</h6>
                     </div>
 
-             
-                  
+                    <div class="price_cars">
+                        <h6 href="#">B&nbsp;{{car.attributes.price}}</h6>
+                    </div>
                 </li>
             </div>
 

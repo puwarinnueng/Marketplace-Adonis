@@ -1,11 +1,16 @@
-{{--  @layout('components.layout')  --}}
 @section('body')
             @each(res in carsbox)                       
-                <div class="">
+                {{--  <div class="">
                     <li class="">                    
                       <a href="#">{{res.attributes.key}}</a>                 
                    </li>
-                </div>            
+                </div>              --}}
+                <div class="cmn-collapse FilterCarListOption__containerBrand" name="null-2" fieldname="brandAndModel">
+                    <button class="cmn-collapse-header FilterCarListOption__buttonBrand">
+                        <span class="cmn-typo-subheader"><a href="/cars">{{res.attributes.key}}</a></span>
+                        <span class="cmn-collapse-text-value"></span>
+                    </button>
+                </div>
             @endeach
 @endsection
 

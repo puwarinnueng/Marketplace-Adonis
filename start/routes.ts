@@ -28,7 +28,7 @@ Route.get('/cars', async (ctx) => {
 
 //route เรียก ctrl2
 // Route.get('/cars', 'CarsController.cars');
-Route.get('/cars1', 'CarsController.carstypebox');
+// Route.get('/cars1', 'CarsController.carstypebox');
 
 
 

@@ -15508,3 +15508,7 @@ button {
     display: flex;
     flex-flow: row wrap;
 }
+.price_cars{
+    font-family: "NittiGrotesk", "DBSaiKrokX", sans-serif;
+    color: #1226b5;
+}

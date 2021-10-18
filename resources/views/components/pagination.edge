@@ -2,16 +2,23 @@
 @each(res in pages)                       
 {{--  <div class="pagination1">
     <ul class="pagination1">
-        <a href="{{route('cars.page')}}">{{res}}</a> 
+        <a href="{{ route('/') }}">{{res}}</a>         
+        
     </ul>                                          
 </div>   --}}
 
-<form action="{{ route('/cars') }}" method="GET" >
-    <div>
-        <input type="text" name="page" value="{{res}}" hidden="true">
-    </div>
-    <button class="">{{res}}</button>
-</form>
+
+<div>
+    {{--  <form action="{{ route('cars.page') }}">  --}}
+    <form action="{{ route('/cars') }}" method="get">
+        <div>
+            <input type="text" name="page" value="{{res}}" hidden="true">
+        </div>
+        <ul>
+            <button class="">{{res}}</button>
+        </ul>    
+    </form>
+</div>
 {{--  {{ elsif ('<span class="error">$self</span>' , getErrorFor('{{ree}}'), hasErrorFor('{{res}}'))}}  --}}
 
 

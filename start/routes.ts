@@ -30,8 +30,9 @@ import Route from '@ioc:Adonis/Core/Route'
 // Route.get('/cars', async (ctx) => {
 //   return new CarsController().cars(ctx)
 // })
-Route.get('cars', 'CarsController.cars')
-Route.get('cars/:id', 'CarsController.cars_detail')
+Route.get('cars', 'CarsController.cars').as('cars.page')
+Route.get('cars/:id', 'CarsController.cars_detail').as('cars.detail')
+
 
 // Route.get('/cars/:id',({params}) =>{
 //   // return params.id
@@ -40,12 +41,20 @@ Route.get('cars/:id', 'CarsController.cars_detail')
 //   return new CarsController().cars_detail(ctx)
 // })
 
-
-
-Route.get('/', async ({ request }) => {
+Route.get('/', async ({ request  }) => {
+  
+  console.log(request.body())
   console.log(request.all())
-})
+  console.log(request.input('title'))
+  console.log(request.qs())
+  console.log(request.url(true))
+  console.log(request.param('id'))
+  console.log(request.method())
+  // console.log(request.headers())
+  const url = Route.makeUrl('/')
+  console.log(url)
 
+})
 
 
 

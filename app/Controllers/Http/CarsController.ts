@@ -1,13 +1,18 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 const axios = require('axios')
+// const validate = require('validator')
 
 export default class CarsController {
 
   // public async cars({ view }) {
   public async cars({ request, view }: HttpContextContract) {
+    // const rules = {
+    //   search: 'require'
+    // }
+    // const validation = await validate(request.all() , rules)
 
-    var pagenow = 1
-    var endpoint = `https://carmana.com/api/v2/cars?min_price=&max_price=&min_mileage=&max_mileage=&min_year=&max_year=&is_certified=false&active_year=all&active_price=all&active_mileage=all&page[number]=${pagenow}&sort=&include=redbook-info.car-submodel.car-model.car-make,car-photos,wished-car,wisher`
+    let pagenow = 1
+    let endpoint = `https://carmana.com/api/v2/cars?min_price=&max_price=&min_mileage=&max_mileage=&min_year=&max_year=&is_certified=false&active_year=all&active_price=all&active_mileage=all&page[number]=${pagenow}&sort=&include=redbook-info.car-submodel.car-model.car-make,car-photos,wished-car,wisher`
 
     let results = await axios.get(endpoint)
     let carsbox = await axios.get('https://carmana.com/api/v2/car-makes')
@@ -25,13 +30,12 @@ export default class CarsController {
       return car
     })
 
-    //pagination หน้าโง่
+    //pagination 
     var countpage = results.data.meta.page?.['total-pages']
     var num; var pages = [1]
     for (num = 2; num <= countpage; num++) {
       pages.push(num)
     }
-
     
     //load view
     return view.render('pages/cars', {
@@ -54,12 +58,5 @@ export default class CarsController {
       id: id,
     });
   }
-
-
-
-
-
-
-
 
 }

@@ -1,0 +1,9 @@
+
+@each(res in pages)                       
+<div class="pagination1">
+    <ul class="pagination1">
+        {{--  <a href="http://localhost:3333/cars?page={{res}}">{{res}}</a>   --}}
+        <a href="{{route('/cars')}}">{{res}}</a> 
+    </ul>                                          
+</div>            
+@endeach

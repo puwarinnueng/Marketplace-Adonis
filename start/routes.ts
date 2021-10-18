@@ -21,18 +21,42 @@
 import Route from '@ioc:Adonis/Core/Route'
 import CarsController from 'App/Controllers/Http/CarsController'
 
-//route เรียก ctrl1
+// Route.get('/', async ({ view }) => {
+//   return view.render('welcome')
+// })
+
+
+//cars
 Route.get('/cars', async (ctx) => {
   return new CarsController().cars(ctx)
 })
-
-//route เรียก ctrl2
-// Route.get('/cars', 'CarsController.cars');
-// Route.get('/cars1', 'CarsController.carstypebox');
-
+// Route.post('/cars',({request})=>{
+//   console.log(request.id)
+// })
 
 
-//default rount
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
+// Route.get('/user', async (ctx) => {
+//   return new CarsController().index(ctx)
+// })
+// Route.get('cars', 'CarsController.cars');
+
+
+// Route.get('/cars/:id',({params}) =>{
+//   // return params.id
+// })
+Route.get('/cars/:id', async (ctx) => {
+  return new CarsController().cars_detail(ctx)
 })
+
+
+
+Route.get('/', async ({ request }) => {
+  console.log(request.all())
+})
+
+
+
+
+
+
+

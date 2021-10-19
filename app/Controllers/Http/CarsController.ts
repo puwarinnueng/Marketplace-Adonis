@@ -57,7 +57,7 @@ export default class CarsController {
       })
     })
     // console.log('includedData', JSON.stringify(results.data.data[0], null, 2))
-    // console.log(includedData)
+    includedData
     const alldata = results.data.data
     
 

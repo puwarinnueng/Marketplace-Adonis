@@ -1,14 +1,14 @@
 
         
-@each(res in pages)                       
+{{--  @each(res in pages)                       
 <div class="pagination1">
     <ul class="pagination1">
         <a href="{{ route('/cars')+'?page='+res }}">{{res}}</a>                
     </ul>                                          
 </div> 
-@endeach
+@endeach  --}}
 <br>
-{{--  <div>
+<div>
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">
@@ -16,9 +16,9 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="{{ route('/cars')+'?page='+1 }}">1</a></li>
+      <li class="page-item"><a class="page-link" href="{{ route('/cars')+'?page='+2 }}">2</a></li>
+      <li class="page-item"><a class="page-link" href="{{ route('/cars')+'?page='+3 }}">3</a></li>
       <li class="page-item"><a class="page-link" href="#">...</a></li>
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Next">
@@ -27,7 +27,7 @@
       </li>
     </ul>
 </nav>
-</div>  --}}
+</div>
 
 
 

@@ -32,6 +32,7 @@ import Route from '@ioc:Adonis/Core/Route'
 // })
 Route.get('cars', 'CarsController.cars').as('cars.page')
 Route.get('cars/:id', 'CarsController.cars_detail').as('cars.detail')
+// Route.get('/:id', 'CarsController.cars_detail').as('cars.detail')
 
 
 // Route.get('/cars/:id',({params}) =>{

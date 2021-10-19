@@ -6,14 +6,16 @@ export default class CarsController {
 
   // public async cars({ view }) {
   public async cars({ request, view }: HttpContextContract) {
+    const currentpage = request.input('page', 1)
+
     
     // console.log(request.all())
-    let pa = request.all()
-    let pagenow = 1 | pa.page
+    // let pa = request.all()
+    // let pagenow = 1 | pa.page
     // console.log(pagenow)
    
 
-    let endpoint = `https://carmana.com/api/v2/cars?min_price=&max_price=&min_mileage=&max_mileage=&min_year=&max_year=&is_certified=false&active_year=all&active_price=all&active_mileage=all&page[number]=${pagenow}&sort=&include=redbook-info.car-submodel.car-model.car-make,car-photos,wished-car,wisher`
+    let endpoint = `https://carmana.com/api/v2/cars?min_price=&max_price=&min_mileage=&max_mileage=&min_year=&max_year=&is_certified=false&active_year=all&active_price=all&active_mileage=all&page[number]=${currentpage}&sort=&include=redbook-info.car-submodel.car-model.car-make,car-photos,wished-car,wisher`
     let results = await axios.get(endpoint)
     let carsbox = await axios.get('https://carmana.com/api/v2/car-makes')
 
@@ -32,7 +34,8 @@ export default class CarsController {
 
     //pagination 
     var countpage = results.data.meta.page?.['total-pages']
-    var num; var pages = [1]
+    var num; var pages = [1] ; 
+    // pages.push("firstpage");
     for (num = 2; num <= countpage; num++) {
       pages.push(num)
     }

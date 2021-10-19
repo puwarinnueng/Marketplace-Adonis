@@ -1,20 +1,29 @@
 @section('body')
-            @each(res in carsbox)                       
-                {{--  <div class="">
-                    <li class="">                    
-                      <a href="#">{{res.attributes.key}}</a>                 
-                   </li>
-                </div>              --}}
-                <div class="cmn-collapse FilterCarListOption__containerBrand" name="null-2" fieldname="brandAndModel">
-                    <button class="cmn-collapse-header FilterCarListOption__buttonBrand">
-                        <span class="cmn-typo-subheader">
-                            {{--  <a href="/cars">  --}}
-                                {{res.attributes.key}}
-                            {{--  </a>  --}}
-                        </span>
-                        <span class="cmn-collapse-text-value"></span>
-                    </button>
-                </div>
-            @endeach
+@each(res in carsbox)
+
+<div class="cmn-collapse FilterCarListOption__containerBrand " name="null-1" fieldname="brandAndModel">
+    <button class="cmn-collapse-header FilterCarListOption__buttonBrand"
+        type="button" data-toggle="collapse" data-target="#nueng{{res.id}}" aria-expanded="false" aria-controls="nueng{{res.id}}">
+        <span class="cmn-typo-subheader">{{res.attributes.key}}      
+        </span>
+        <span class="cmn-collapse-text-value"></span>
+        
+    </button>
+
+
+    <div class="collapse" id="nueng{{res.id}}">
+        <div class="card card-body">
+            <div class="FilterCarListOption__containerModel">
+                <button  class="FilterCarListOption__buttonModel ">{{res.attributes.key}} ทุกรุ่น</button>
+                @each(carsboxdetail in carsboxdetail)
+                    <button  class="FilterCarListOption__buttonModel">{{carsboxdetail.attributes.text}}</button>
+                @endeach                
+            </div>
+        </div>
+    </div>
+</div>
+@endeach
 @endsection
+
+
 

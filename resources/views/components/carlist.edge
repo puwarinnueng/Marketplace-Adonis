@@ -1,33 +1,19 @@
-{{--  @layout('components.layout')  --}}
-@include('components.layout')
-
-{{--  @section('content')  --}}
-
+{{--  @include('components.layout')
 @section('body')
 <div class="car-list-container">
     <div class="CarListContainer__root">
         <div class="CarListContainer__blockCarlist">
-            <div class="CarListContainer__carList">
+        <div class="CarListContainer__carList">
  
             @each(car in cars)                        
             <div class="CarCard__root">
                 <li class="">
-                    
-                    {{--  {{ console.log(car.photos) }}  --}}
                     @each(photo in car.photos) 
                         @if(photo.include && photo.include.attributes['photo-type'] == 'front')
-                            {{--  {{car.id}} (include front photo)  --}}
-                            {{--  {{photo.include.attributes['medium-url']}}  --}}
-                            {{--  <a class="image-cars">
-                                <img scr={{photo.include.attributes['medium-url']}}  class="" alt="aaa">
-                            </a>  --}}
                             <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars/{{car.id}}" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
                         @endif
                     @endeach
-                    
-
-
-                    <div>
+                    <div class="">
                       <p href="#">No.&nbsp;{{car.id}}</p>
                     </div>
 
@@ -43,14 +29,59 @@
                         <h6 href="#">B&nbsp;{{car.attributes.price}}</h6>
                     </div>
                 </li>
-            </div>
-
-            
+            </div>           
             @endeach
-
-            </div>
+        </div>
         </div>
     </li>  
 </div>
-@endsection
+@endsection  --}}
+
+
+@each(car in cars)                        
+<div class="CarCard__root">
+   
+    @each(photo in car.photos) 
+         @if(photo.include && photo.include.attributes['photo-type'] == 'front')
+           <a class="CarCard__blockImage CarCard__link topThreeImage" href="/cars/{{car.id}}" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
+         @endif
+    @endeach
+
+    
+    <div class="CarCard__blockDescription">
+        <a class="CarCard__link" href="/cars/36770">
+            {{--  <div class="CarCard__headerDescription">
+                <h3 class="cmn-typo-h3 CarCard__customH3">2015</h3>
+            </div>  --}}
+
+
+            {{--  @each(redbookid in redbookid)
+                @each(year_cars in year_cars)
+                   @each(yeardata in yeardata)                 
+                        @if( year_cars == redbookid)
+                          <a>ปี{{yeardata}}</a>
+                        @endif
+                  @endeach                  
+                @endeach
+            @endeach  --}}
+            {{--  @each(yeardata in yeardata)
+                 <div>{{yeardata}}</div>
+            @endeach  --}}
+
+
+            
+            <div class="CarCard__carNo">
+                <h3 class="cmn-typo-h3 CarCard__customH3">No. {{car.id}}</h3>
+            </div>
+            {{--  <h6 class="cmn-typo-h3 CarCard__customH3 CarCard__customTitle">{{car.attributes.name}}</h6>  --}}
+            <h6 class="textnamecars">{{car.attributes.name}}</h6>
+            <span class="cmn-typo-caption CarCard__customCaption">{{car.attributes.mileage}} km</span>
+        </a>
+        <div class="CarCard__footerDescription">
+            <h3 class="cmn-typo-h3 CarCard__customH3 CarCard__price"><span class="car-currency">฿</span>&nbsp; {{car.attributes.price}}</h3>
+            <button class="CarCard__wishlistButton"><i class="icon cmn-heart-icon "></i></button>
+        </div>
+    </div>
+</div>          
+@endeach
 

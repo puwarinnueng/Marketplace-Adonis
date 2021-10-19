@@ -11,7 +11,12 @@
         </div>
      
         <div class="FilterCarListOption__halfContainer2">
-            <u><a class="carmee4" href="/cars/toyota"><h3 class="sizefont2">Toyota</h3></a></u>                                 
+            <u>
+                {{--  <a class="carmee4" href="/cars/toyota">  --}}
+                <a class="carmee4" href="{{ route('/cars')+'?carBrandAndModel='+57 }}"><h3 class="sizefont2">Toyota</h3></a> 
+                    
+                </a>
+            </u>                                 
         </div>
         <div class="FilterCarListOption__halfContainer2">
             <a><h5>|</h5></a>                              

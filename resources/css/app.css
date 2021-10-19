@@ -201,6 +201,8 @@ button {
 .cmn-typo-h3 {
     font-size: 1.5rem;
     line-height: 1.33;
+    /* font-family: "NittiGrotesk", "DBSaiKrokX", sans-serif; */
+    color: #1226b5;
 }
 
 .cmn-typo-normal {
@@ -15515,4 +15517,7 @@ button {
 .pagination1{
     font-family: "NittiGrotesk", "DBSaiKrokX", sans-serif;
     color: #1226b5;
+}
+.textnamecars{
+    font-weight:400;
 }

@@ -356,28 +356,20 @@
                                         <div class="FilterCarListOption__containerBrand"><button
                                                 class="FilterCarListOption__buttonBrand FilterCarListOption__text active">ทุกยี่ห้อและรุ่น</button>
                                         </div>
-                                        @include('components.cartypebox')
-                                        {{--  <div class="cmn-collapse FilterCarListOption__containerBrand" name="null-2" fieldname="brandAndModel">
-                                            <button class="cmn-collapse-header FilterCarListOption__buttonBrand">
-                                                <span class="cmn-typo-subheader">Aston Martin</span>
+                                        @include('components.cartypebox')                                  
+                                        
+                                        {{--  <div class="cmn-collapse FilterCarListOption__containerBrand " name="null-1" fieldname="brandAndModel">
+                                            <button class="cmn-collapse-header FilterCarListOption__buttonBrand"
+                                                type="button" data-toggle="collapse" data-target="#nueng" aria-expanded="false" aria-controls="nueng">
+                                                <span class="cmn-typo-subheader ">Alfa Romeo</span>
                                                 <span class="cmn-collapse-text-value"></span>
                                             </button>
-                                        </div>  --}}
-                                        
-                                        {{--  <div class="cmn-collapse FilterCarListOption__containerBrand " name="null-1"
-                                            fieldname="brandAndModel"><button
-                                                class="cmn-collapse-header FilterCarListOption__buttonBrand"
-                                                type="button" data-toggle="collapse" data-target="#nueng"
-                                                aria-expanded="false" aria-controls="nueng"><span
-                                                    class="cmn-typo-subheader ">Alfa Romeo</span><span
-                                                    class="cmn-collapse-text-value"></span></button>
 
 
                                             <div class="collapse" id="nueng">
                                                 <div class="card card-body">
                                                     <div class="FilterCarListOption__containerModel"><button
-                                                            class="FilterCarListOption__buttonModel ">Alfa Romeo
-                                                            ทุกรุ่น</button><button
+                                                            class="FilterCarListOption__buttonModel ">Alfa Romeo ทุกรุ่น</button><button
                                                             class="FilterCarListOption__buttonModel ">147</button><button
                                                             class="FilterCarListOption__buttonModel ">156</button><button
                                                             class="FilterCarListOption__buttonModel ">159</button><button
@@ -388,9 +380,11 @@
                                                             class="FilterCarListOption__buttonModel ">Spider</button>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>  --}}
+
+
+
                                         {{--  <div class="FilterCarListOption__container-see-more" id="headingFour">
                                             <button class="FilterCarListOption__buttonSeeMore FilterCarListOption__text"
                                                 type="button" data-toggle="collapse" data-target="#er"
@@ -854,42 +848,10 @@
                                         </div>
                                     </div>
                                     {{--  map ข้อมูลรถ  --}}
-                                    <div class="CarListContainer__carList">
-                                       
-                               
+                                    <div class="CarListContainer__carList">                              
                                      @include('components.carlist')
                                        
-                                                                            
-                                      
-                                        {{--  <div class="CarCard__root">
-                                            <a class="CarCard__blockImage CarCard__link topThreeImage"
-                                                href="/cars/36770"
-                                                style="background-image: url(&quot;https://d2wezh9hvue3em.cloudfront.net/fit-in/300x200/user-content/car-photo/image/OJjOUddjGIj0lqYsFkUYS827_regular.jpg&quot;);"></a>
-                                            <div class="CarCard__blockDescription">
-                                                <a class="CarCard__link" href="/cars/36770">
-                                                    <div class="CarCard__headerDescription">
-                                                        <h3 class="cmn-typo-h3 CarCard__customH3">2015</h3>
-                                                    </div>
-                                                    <div class="CarCard__carNo">
-                                                        <h3 class="cmn-typo-h3 CarCard__customH3">No. 36770</h3>
-                                                    </div>
-                                                    <h3 class="cmn-typo-h3 CarCard__customH3 CarCard__customTitle">
-                                                        Nissan Urvan</h3><span
-                                                        class="cmn-typo-caption CarCard__customCaption">2.5 NV350 High
-                                                        Roof Van | 192,000 km</span>
-                                                </a>
-                                                <div class="CarCard__footerDescription">
-                                                    <h3 class="cmn-typo-h3 CarCard__customH3 CarCard__price"><span
-                                                            class="car-currency">฿</span>&nbsp; 339,000</h3><button
-                                                        class="CarCard__wishlistButton"><i
-                                                            class="icon cmn-heart-icon "></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        --}}
-                    
-                                        
+                                              
                                     </div>
                                 </div>
                                 <div class="CarListContainer__Pagination">
@@ -908,7 +870,7 @@
                                   
                                
                                         
-                                        @include('components.pagination')                                                                                           
+                                    @include('components.pagination')                                                                                           
                                 </div>
 
                         </div>
